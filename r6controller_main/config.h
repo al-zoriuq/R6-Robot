@@ -41,7 +41,7 @@ constexpr uint32_t GPS_MAX_AGE_MS       = 3000;   // dato más viejo que esto = 
 
 // ---------- Sensor de luz (fotorresistencia) ----------
 constexpr uint8_t  PIN_LDR = 34;            // debe ser ADC1 (32-39) porque usamos WiFi
-constexpr uint8_t  PIN_LIGHT_LED = 23;
+constexpr uint8_t  PIN_LIGHT_LED = 19;
 constexpr int      LIGHT_ON_BELOW  = 1200;  // si la lectura baja de aquí -> prende el LED
 constexpr int      LIGHT_OFF_ABOVE = 1500;  // si sube de aquí -> apaga el LED
 constexpr uint32_t LIGHT_READ_INTERVAL_MS = 100;

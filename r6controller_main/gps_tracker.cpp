@@ -10,8 +10,16 @@ void gpsInit() {
 }
 
 void gpsUpdate() {
-  // TinyGPSPlus interpreta las frases NMEA ($GPRMC, $GPGGA...) carácter a carácter
   while (gpsSerial.available()) gps.encode(gpsSerial.read());
+
+  static unsigned long t = 0;
+  if (millis() - t > 2000) {
+    t = millis();
+    Serial.printf("[gps] chars=%lu  frases_ok=%lu  sat=%u  fix=%s\n",
+      gps.charsProcessed(), gps.sentencesWithFix(),
+      gps.satellites.isValid() ? gps.satellites.value() : 0,
+      gpsHasFix() ? "SI" : "NO");
+  }
 }
 
 bool gpsHasFix() {
