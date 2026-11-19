@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Video de la ESP32-CAM -->
+    <ImageView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Video del carro"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/videoStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Esperando video…"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp"
+        android:background="#88000000"
+        android:padding="6dp"
+        android:textColor="#FF5252"
+        android:textSize="14sp"
+        tools:text="● Conectado" />
+
+    <!-- Botón inferior izquierdo -->
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="24dp"
+        android:text="Ver ubicación en el mapa" />
+
+    <!-- Joystick inferior derecho -->
+    <com.example.r6controller.JoystickView
+        android:id="@+id/joystick"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp" />
+
+</FrameLayout>
